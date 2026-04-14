@@ -5,7 +5,8 @@ app.use(express.json());
 
 // Simulación de base de datos
 let cuentas = {
-    "1": { saldo: 1000 }
+    "1": { saldo: 1000 },
+    "2": { saldo: 1000 }
 };
 
 // Cache de requestId (idempotencia)
@@ -82,7 +83,6 @@ app.get('/saldo/:cuentaId', (req, res) => {
 
     res.json(cuenta);
 });
-
 
 app.listen(3000, () => {
     console.log("Servidor en http://localhost:3000");
